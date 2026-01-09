@@ -1,5 +1,5 @@
 body {
-    background: rgb(9, 9, 60);
+    background: rgb(4, 1, 61);
     color: #fff6f6;
     font-family: Arial, sans-serif;
     display: flex;
@@ -14,10 +14,14 @@ body {
     height: 60vh;
     text-align: center;
     padding: 50px;
-    border: 2px solid #ffffff;
+    border: 6px solid #ffffff;
     border-radius: 20px;
-    background: rgb(9, 9, 60)}
-
+    background: rgb(9, 9, 60);
+   transition: box-shadow 0.5s ease;
+}
+.container:hover{
+    box-shadow: rgba(53, 22, 164, 0.6) 20px 20px 30px;
+}
 h1 {
     color: #ffffff; 
     font-size: 60px;
@@ -39,6 +43,7 @@ button {
 
 button:hover {
     background-color: #0056b3;
+    box-shadow: rgb(37, 15, 114) 10px 10px ;
 }
 
 #result {
@@ -46,3 +51,173 @@ button:hover {
     font-weight: bold;
     font-size: 40px;
 }
+
+.letter-image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 200px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+}
+
+.animated-mail {
+    margin-top: 200px;
+	position: absolute;
+	height: 150px;
+	width: 200px;
+	-webkit-transition: .4s;
+	-moz-transition: .4s;
+	transition: .4s;
+	
+	.body {
+		position: absolute;
+		bottom: 0;
+		width: 0;
+		height: 0;
+        border: 1px white solid;
+		border-style: solid;
+		border-width: 0 0 100px 200px;
+		border-color: transparent transparent darkblue transparent;
+		z-index: 2;
+	}
+	
+	.top-fold {
+		position: absolute;
+		top: 50px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 50px 100px 0 100px;
+		-webkit-transform-origin: 50% 0%;
+		-webkit-transition: transform .4s .4s, z-index .2s .4s;
+		-moz-transform-origin: 50% 0%;
+		-moz-transition: transform .4s .4s, z-index .2s .4s;
+		transform-origin: 50% 0%;
+		transition: transform .4s .4s, z-index .2s .4s;
+		border-color: blue transparent transparent transparent;
+		z-index: 2;
+	}
+	
+	.back-fold {
+		position: absolute;
+		bottom: 0;
+		width: 200px;
+		height: 100px;
+		background: darkblue;
+		z-index: 0;
+	}
+	
+	.left-fold {
+		position: absolute;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 50px 0 50px 100px;
+		border-color: transparent transparent transparent blue;
+		z-index: 2;
+	}
+	
+	.letter {
+		left: 20px;
+		bottom: 0px;
+		position: absolute;
+		width: 160px;
+		height: 60px;
+		background: white;
+		z-index: 1;
+		overflow: hidden;
+		-webkit-transition: .4s .2s;
+		-moz-transition: .4s .2s;
+		transition: .4s .2s;
+		
+		.letter-border {
+			height: 10px;
+			width: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        rgb(11, 11, 76),
+        blue 8px,
+        transparent 8px,
+        transparent 18px
+      );
+		}
+		
+		.letter-title {
+			margin-top: 10px;
+			margin-left: 5px;
+			height: 12px;
+			width: 60%;
+			background: blue;
+		}
+		.letter-context {
+            font-size: 10px;
+			margin-top: 10px;
+			margin-left: 5px;
+			height: 12px;
+			width: 50%;
+			background: blue;
+		}
+		
+		.letter-stamp {
+			margin-top: 30px;
+			margin-left: 120px;
+			border-radius: 100%;
+			height: 30px;
+			width: 30px;
+			background: blue;
+			opacity: 0.3;
+		}
+	}
+}
+
+.shadow {
+    margin-top: 200px;
+	position: absolute;
+	top: 200px;
+	left: 50%;
+	width: 400px;
+	height: 30px;
+	transition: .4s;
+	transform: translateX(-50%);
+	-webkit-transition: .4s;
+	-webkit-transform: translateX(-50%);
+	-moz-transition: .4s;
+	-moz-transform: translateX(-50%);
+	
+	border-radius: 100%;
+	background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+}
+
+	.letter-image:hover {
+		.animated-mail {
+			transform: translateY(50px);
+			-webkit-transform: translateY(50px);
+			-moz-transform: translateY(50px);
+		}
+		
+		.animated-mail .top-fold {
+			transition: transform .4s, z-index .2s;
+			transform: rotateX(180deg);
+			-webkit-transition: transform .4s, z-index .2s;
+			-webkit-transform: rotateX(180deg);
+			-moz-transition: transform .4s, z-index .2s;
+			-moz-transform: rotateX(180deg);
+			z-index: 0;
+		}
+		
+		.animated-mail .letter {
+			height: 180px;
+		}
+		
+		.shadow {
+			width: 250px;
+		}
+	}
+
+
+    

@@ -14,3 +14,4 @@ document.querySelector('.promiseButton').addEventListener('click', function() {
         resultElement.textContent = 'Error: ' + error;
     });
 });
+
